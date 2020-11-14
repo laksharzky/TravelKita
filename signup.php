@@ -1,61 +1,60 @@
-<?php 
-	include 'db_config.php';
-
-
-
- ?>
-
-
-
+<?php
+include 'db_config.php';
+?>
+<!DOCTYPE html>
+<html>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-	<link rel="icon" type="image/png" href="assets/image/logo.png">
-  <title>Travel Kita</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/user.css">
-	<link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/image/logo.png">
+  <title>Registration</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
 </head>
+
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-          <div class="card-body">
-            <h5 class="card-title text-center">Sign Up</h5>
-            <form class="form-signin" method="POST" action="actions/regis.php">
-            	
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 user-bg"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <div class="text-center">
+                  <img src="assets/image/logo.png" class="rounded" alt="..." width="40%">
+                </div>
+                <h3 class="login-heading mb-4">Login/Register</h3>
+                <form method="POST">
 
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email address</label>
-              </div>
-              <div class="form-label-group">
-                <input type="text" class="form-control" placeholder="Username" name="username" required autofocus>
-                <label for="Username">Username</label>
-              </div>
+                  <div class="form-label-group">
+                    <input type="text" id="inputEmail" class="form-control" placeholder="Username" name="userEmail" required autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+                  <div class="form-label-group">
+                    <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="userUsername" required autofocus>
+                    <label for="inputUsername">Username</label>
+                  </div>
 
-              <div class="form-label-group">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
-              </div>
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="userPassword" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
 
-              
-              <button class="btn btn-lg btn-google btn-block text-uppercase" name="submit" type="submit"><i class="fab fa-google mr-2"></i> Sign up</button>
-        
-            </form>
+                  <button class="btn btn-lg btn-info btn-block btn-login text-uppercase font-weight-bold mb-2" name="masuk" type="submit">Sign in</button>
+
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/navbar.min.js"></script>
+
 </body>
+
+</html>
