@@ -1,16 +1,16 @@
-<?php   
-    require '../db_config.php';
-    session_start();
+<?php
+require '../db_config.php';
+session_start();
 
-    if (empty($_SESSION['nm_pengguna'])) {
-      header("location: index.php");
-    };
+if (empty($_SESSION['nm_pengguna'])) {
+  header("location: index.php");
+};
 
 
-    $query = "SELECT * FROM extras";
+$query = "SELECT * FROM extras";
 
-    $rows = mysqli_query($conn, $query);
- ?>
+$rows = mysqli_query($conn, $query);
+?>
 
 
 
@@ -18,6 +18,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,11 +30,12 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css">
- 
+
 
 </head>
+
 <body>
-   <div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
@@ -44,7 +46,7 @@
         <a href="upload_extras.php" class="list-group-item list-group-item-action bg-light">Extras</a>
         <a href="kelola.php" class="list-group-item list-group-item-action bg-light">Kelola Extras</a>
         <a href="profile.php" class="list-group-item list-group-item-action bg-light">Profile</a>
-       
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -66,67 +68,67 @@
             <li class="nav-item">
               <a class="btn btn-danger" href="logout.php">Logout</a>
             </li>
-            
+
             </li>
           </ul>
         </div>
       </nav>
       </nav>
 
-    <div class="container bg-light" id="team">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Administrator</h2>
-          <h3 class="section-subheading text-muted">Who behind the program</h3>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-sm-4">
-          <div class="team-member">
-            
-            <h4>Laksha Aulia Rizky</h4>
-            <p class="text-muted">Frontend & Backend</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://twitter.com/stillbeinghuman" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/laksharzky" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://web.facebook.com/lakhsa.munthe" target="_blank">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </li>
-            </ul>
+      <div class="container bg-light" id="team">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Administrator</h2>
+            <h3 class="section-subheading text-muted">Who behind the program</h3>
           </div>
         </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-           
-            <h4>Opianus Zega</h4>
-            <p class="text-muted">Database</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://twitter.com/" target="_blank">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com" target="_blank">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://web.facebook.com" target="_blank">
-                  <i class="fab fa-facebook"></i>
-                </a>
-              </li>
-            </ul>
+        <div class="row justify-content-center">
+          <div class="col-sm-4">
+            <div class="team-member">
+
+              <h4>Laksha Aulia Rizky</h4>
+              <p class="text-muted">Frontend & Backend</p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/stillbeinghuman" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com/laksharzky" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://web.facebook.com/lakhsa.munthe" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+          <div class="col-sm-4">
+            <div class="team-member">
+
+              <h4>Opianus Zega</h4>
+              <p class="text-muted">Database</p>
+              <ul class="list-inline social-buttons">
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+                </li>
+                <li class="list-inline-item">
+                  <a href="https://web.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>

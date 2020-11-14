@@ -1,28 +1,28 @@
+<?php
+require '../db_config.php';
 
-<?php   
-    require '../db_config.php';
+session_start();
+if (empty($_SESSION['nm_pengguna'])) {
+  header("location: index.php");
+};
 
-    session_start();
-  if (empty($_SESSION['nm_pengguna'])) {
-      header("location: index.php");
-    };
+$id = $_GET['id'];
 
-    $id = $_GET['id'];
+if (empty($_GET["id"])) {
+  header('Location: kelola.php');
+}
+$query = "SELECT * FROM extras WHERE id = $id";
+$eksekusi = mysqli_query($conn, $query);
+$data = mysqli_fetch_assoc($eksekusi);
 
-    if (empty($_GET["id"])) {
-     header('Location: kelola.php');
-    }
-   $query = "SELECT * FROM extras WHERE id = $id";
-   $eksekusi = mysqli_query($conn, $query);
-   $data = mysqli_fetch_assoc($eksekusi);
 
-   
- ?>
+?>
 
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,11 +34,12 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css">
- 
+
 
 </head>
+
 <body>
-   <div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
@@ -49,7 +50,7 @@
         <a href="upload_extras.php" class="list-group-item list-group-item-action bg-light">Extras</a>
         <a href="kelola.php" class="list-group-item list-group-item-action bg-light">Kelola Extras</a>
         <a href="profile.php" class="list-group-item list-group-item-action bg-light">Profile</a>
-      
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -71,26 +72,27 @@
             <li class="nav-item">
               <a class="btn btn-danger" href="logout.php">Logout</a>
             </li>
-            
+
             </li>
           </ul>
         </div>
       </nav>
       </nav>
-       <form method="POST" action="../actions/update.php" enctype="multipart/form-data">
-            
-              <div class="form-group ">
-                <label for="gambar">Image</label><br>   
-                <input type="file" class="filestyle noborder" name="gambar" id="image" onchange="showImage(this);">
-              </div>
+      <form method="POST" action="../actions/update.php" enctype="multipart/form-data">
 
-              <div class="form-group ">
-                <label for="comment">Content</label>
-                  <textarea class="form-control noborder" rows="5" name="konten" id="konten"><?php echo $data ['konten']; ?></textarea>
-                  
-                </div>
-            <button type="submit" class="btn btn-primary noborder" name="save">Simpan</button>
+        <div class="form-group ">
+          <label for="gambar">Image</label><br>
+          <input type="file" class="filestyle noborder" name="gambar" id="image" onchange="showImage(this);">
+        </div>
 
-          </form>
+        <div class="form-group ">
+          <label for="comment">Content</label>
+          <textarea class="form-control noborder" rows="5" name="konten" id="konten"><?php echo $data['konten']; ?></textarea>
+
+        </div>
+        <button type="submit" class="btn btn-primary noborder" name="save">Simpan</button>
+
+      </form>
 </body>
+
 </html>

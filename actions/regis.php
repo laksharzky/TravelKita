@@ -1,39 +1,37 @@
-<?php 
+<?php
 include '../db_config.php';
 
-
+//submit user data to registration process
 if (isset($_POST['submit'])) {
-  
-  //simpan data ke variabel lokal
 
+  //saving data into a local variable
   $email = $_POST["email"];
   $username = $_POST["username"];
   $password = strtolower($_POST["password"]);
- 
 
-  //validasi data tidak kosong
-  if ( !empty($email) AND
-        !empty($username)AND
-      !empty($password)) {
+  //data validation
+  if (
+    !empty($email) and
+    !empty($username) and
+    !empty($password)
+  ) {
 
-    //query insert
+    //query insert into Database
     $query1 = "INSERT INTO user VALUES (
           '$email',
           '$username',
           '$password')";
     $eksekusi  = mysqli_query($conn, $query1);
 
-    if (mysqli_affected_rows($conn)) {?>
+    if (mysqli_affected_rows($conn)) { ?>
       <script type="text/javascript">
         alert("Anda Berhasil Registrasi");
         window.location.href = "../user.php"
       </script>
-      <?php 
-    } 
-
-      
+<?php
     }
-  }else{
-    header('location:../index.php');
   }
+} else {
+  header('location:../index.php');
+}
 ?>

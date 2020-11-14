@@ -1,13 +1,14 @@
-<?php 
-  include '../db_config.php';
-  session_start();
+<?php
+include '../db_config.php';
+session_start();
 
-      
- ?>
+
+?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,11 +20,12 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
   <link rel="stylesheet" type="text/css" href="../fontawesome/css/all.min.css">
- 
+
 
 </head>
+
 <body>
-   <div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
@@ -34,7 +36,7 @@
         <a href="upload_extras.php" class="list-group-item list-group-item-action bg-light">Extras</a>
         <a href="kelola.php" class="list-group-item list-group-item-action bg-light">Kelola Extras</a>
         <a href="profile.php" class="list-group-item list-group-item-action bg-light">Profile</a>
-      
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -56,14 +58,14 @@
             <li class="nav-item">
               <a class="btn btn-danger" href="logout.php">Logout</a>
             </li>
-            
+
           </ul>
         </div>
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Welcome  <?php echo $_SESSION["nm_pengguna"]; ?></h1>
-       
+        <h1 class="mt-4">Welcome <?php echo $_SESSION["nm_pengguna"]; ?></h1>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -73,13 +75,13 @@
 
   <!-- Bootstrap core JavaScript -->
 
-      <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script src="../js/jquery-3.3.1.slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/navbar.min.js"></script>
+  <script src="../js/jquery-3.3.1.slim.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/navbar.min.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>
@@ -92,4 +94,3 @@
 </body>
 
 </html>
-

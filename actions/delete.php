@@ -1,64 +1,62 @@
-<?php 
+<?php
 
 
-	require '../db_config.php';
+require '../db_config.php';
 
-	if (isset($_GET['id'])) {
+if (isset($_GET['id'])) {
 
-		$id = $_GET['id'];
+	$id = $_GET['id'];
 
-		$query = "DELETE FROM flight
+	$query = "DELETE FROM flight
 					WHERE id = $id";
 
 
-		$eksekusi = mysqli_query($conn, $query);
-		
+	$eksekusi = mysqli_query($conn, $query);
 
-		if (mysqli_affected_rows($conn)) { ?>
 
-			<script type="text/javascript">
-				alert('Data Berhasil Dihapus');
-				window.location.href = '../admin/flightbook.php';
-			</script>
+	if (mysqli_affected_rows($conn)) { ?>
 
-			<?php
-		}
+		<script type="text/javascript">
+			alert('Data Berhasil Dihapus');
+			window.location.href = '../admin/flightbook.php';
+		</script>
 
-	} else {
-		header('locaction: ../admin.admin.php');
+	<?php
 	}
-	if (isset($_GET['id'])) {
-		$id = $_GET['id'];
+} else {
+	header('locaction: ../admin.admin.php');
+}
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
 	$query1 = "DELETE FROM hotel WHERE id = $id";
-		$execute = mysqli_query($conn, $query1);
+	$execute = mysqli_query($conn, $query1);
 
-		if (mysqli_affected_rows($conn)) {?>
-			<script type="text/javascript">
-				alert('Data Berhasil Dihapus');
-				window.location.href = '../admin/hotelbook.php';
-			</script>
+	if (mysqli_affected_rows($conn)) { ?>
+		<script type="text/javascript">
+			alert('Data Berhasil Dihapus');
+			window.location.href = '../admin/hotelbook.php';
+		</script>
 
-			<?php
-			
-		}
+	<?php
 
-	}else{
-		header('location: ../admin/hotelbook');
 	}
-	if (isset($_GET['id'])) {
-		$id = $_GET['id'];
-		$query2 = "DELETE FROM extras WHERE id = $id";
-		$eksekusi1 = mysqli_query($conn, $query2);
+} else {
+	header('location: ../admin/hotelbook');
+}
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+	$query2 = "DELETE FROM extras WHERE id = $id";
+	$eksekusi1 = mysqli_query($conn, $query2);
 
-		if (mysqli_affected_rows($conn)) {?>
-			<script type="text/javascript">
-				alert('Data Berhasil Dihapus');
-				window.location.href = '../admin/kelola.php'
-			</script>
-			<?php
-		}
-	}else{
-		header('location:../admin/kelola.php');
+	if (mysqli_affected_rows($conn)) { ?>
+		<script type="text/javascript">
+			alert('Data Berhasil Dihapus');
+			window.location.href = '../admin/kelola.php'
+		</script>
+<?php
 	}
+} else {
+	header('location:../admin/kelola.php');
+}
 
- ?>
+?>
